@@ -1,8 +1,10 @@
 import streamlit as st
+import os
 
 def calculate_mortgage_gap():
     st.title("🇨🇦 Ontario Mortgage Protection Analyzer")
     st.subheader("See if your family is actually protected or just your bank.")
+    st.caption(f"App file: {os.path.abspath(__file__)}")
 
     # User Inputs
     mortgage_balance = st.number_input("Current Mortgage Balance ($)", value=500000)
@@ -55,6 +57,24 @@ def calculate_mortgage_gap():
     st.caption(
         "This is *not* a real quote or guarantee. It's a broad educational range so the numbers feel concrete — "
         "your actual price could be lower or higher."
+    )
+
+    st.divider()
+
+    st.write("### What Akshay Can Help You With")
+    st.write(
+        "- **Protection**  \n"
+        "  - Travel insurance  \n"
+        "  - Term life insurance  \n"
+        "  - Universal life insurance  \n"
+        "  - Whole life insurance  \n\n"
+        "- **Investments (with segregated funds)**  \n"
+        "  - RRSP  \n"
+        "  - RESP  \n"
+        "  - TFSA  \n"
+        "  - LIRA  \n\n"
+        "- **Mortgage referrals**  \n"
+        "  - Connecting you with mortgage specialists who understand your full financial picture."
     )
 
     if st.button("Get a Custom Comparison & Quote"):
